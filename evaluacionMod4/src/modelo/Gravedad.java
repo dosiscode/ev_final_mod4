@@ -6,6 +6,13 @@ public class Gravedad {
 	private String nivel;
 	
 	
+	
+	public Gravedad(String nivel) {
+		super();
+		this.nivel = nivel;
+	}
+
+
 	public Gravedad(int id_gravedad, String nivel) {
 		super();
 		this.id_gravedad = id_gravedad;

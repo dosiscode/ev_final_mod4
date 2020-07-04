@@ -26,7 +26,7 @@ public class ClienteDAO {
 	}
 	
 	
-	//davuelve la lista de clientes de la BD
+	//devuelve la lista de clientes de la BD
 	public List<Cliente> listarClientes() throws SQLException{
 		
 		List<Cliente>  listaCliente = new ArrayList<Cliente>(); 
