@@ -1,7 +1,8 @@
 package modelo;
 
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
+
 
 public class Accidente {
 
@@ -16,6 +17,16 @@ public class Accidente {
 	
 	
 	
+	public Accidente(Time hora, Date fecha, String descripcion, int id_gravedad) {
+		super();
+		this.hora = hora;
+		this.fecha = fecha;
+		this.descripcion = descripcion;
+		this.id_gravedad = id_gravedad;
+		
+	}
+
+
 	public Accidente(int id_accidente, Time hora, Date fecha, String descripcion, int id_gravedad, int id_persona,
 			int id_asesoria) {
 		super();

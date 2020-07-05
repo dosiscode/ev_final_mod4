@@ -18,37 +18,43 @@ import modelo.Persona;
 
 public class AccidenteDAO {
 	
-	Accidente accidente;
+	private Accidente accidente;
+	private PersonaDao personaDao;
 	
-	Connection conn;
-	Conexion miConexion;
+	private Connection conn;
+	private Conexion miConexion;
 	
 	
 	public AccidenteDAO(DataSource datos) {
 		 this.miConexion = new Conexion(datos);
+		 this.personaDao = new PersonaDao(datos);
 	}
 	
 	
 	//Guarda un accidente en la BD
-		public boolean guardaAccidente(Accidente p) throws SQLException {
-			 
-			String sql = "INSERT INTO Accidente VALUES(idAccidente.nextval, ?,?,?,?,?)";
+		public boolean guardaAccidente(Accidente a) throws SQLException {
+						
+			//se recupera el id de la ultima persona agregada
+			int idPersona = personaDao.idUltimaPersana();
+						
+			String sql = "INSERT INTO Accidente (ID_ACCIDENTE, HORA, FECHA, DESCRIPCION, "
+					+ "GRAVEDAD_ID_GRAVEDAD, PERSONA_ID_PERSONA) VALUES(idAccidente.nextval,?,?,?,?,?)";			
 			
-			conn = miConexion.conectar();
+			conn = miConexion.conectar();					
 			
 			PreparedStatement preStm = conn.prepareStatement(sql);
 			
-			preStm.setTime(1, p.getHora());
-			preStm.setDate(2, (Date) p.getFecha());
-			preStm.setString(3, p.getDescripcion());
-			preStm.setInt(4, p.getId_gravedad());
-			preStm.setInt(4, p.getId_persona());
+			preStm.setTime(1, a.getHora());
+			preStm.setDate(2,  a.getFecha());
+			preStm.setString(3, a.getDescripcion());
+			preStm.setInt(4, a.getId_gravedad());
+			preStm.setInt(5, idPersona);
 					
 			boolean siGuarda = preStm.executeUpdate() > 0;
 			miConexion.desconectar(conn);
 			
 			return siGuarda;		
-		}
+		}		
 
 	
 	
@@ -78,5 +84,4 @@ public class AccidenteDAO {
 			
 			return listaAccidente;			
 		}
-
 }

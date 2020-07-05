@@ -10,7 +10,7 @@
 	<body>
 		<div class="contenedorPpl">
 		<h3>Nuevo Accidente</h3>
-			<form action="">
+			<form action="../ClienteServ?accion=creaAccidente" method="post">
 				<div class="cont_uno">					
 					<div class="inputs">
 						<label for="nombre">Nombre: </label><br>
@@ -26,11 +26,11 @@
 					</div>					
 				</div>
 				<div class="cont_uno">
-					<input type="radio" id="grave" name="nivel">
+					<input type="radio" id="grave" name="nivel" value="1">
 					<label for="grave">Grave: </label><br>
-					<input type="radio" id="medio" name="nivel">
+					<input type="radio" id="medio" name="nivel" value="2">
 					<label for="medio">Medio: </label><br>
-					<input type="radio" id="leve" name="nivel">
+					<input type="radio" id="leve" name="nivel" value="3">
 					<label for="leve">Leve: </label><br>
 					
 					<div class="date">
@@ -47,7 +47,7 @@
 					<textarea id="descripcion" name="descripcion" rows="5" cols="70"></textarea>				
 				</div>				
 				<div class="btns">
-					<button class="aceptar">Aceptar</button>
+					<button class="aceptar" type="submit">Aceptar</button>
 					<button class="limpiar">Limpiar</button>
 					<button class="cancelar">Cancelar</button>
 				</div>

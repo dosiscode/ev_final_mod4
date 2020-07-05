@@ -7,6 +7,14 @@ public class Persona {
 	private String apellido;
 	private int edad;
 	
+	
+	public Persona(String nombre, String apellido, int edad) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.edad = edad;
+	}
+
 	public Persona(int id_persona, String nombre, String apellido, int edad) {
 		super();
 		this.id_persona = id_persona;

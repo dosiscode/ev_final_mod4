@@ -70,5 +70,24 @@ public class PersonaDao {
 			return listaPersona;
 			
 		}
-			
+		
+		//devuelve el id la última persona registrada	
+		public int idUltimaPersana() throws SQLException {
+					
+			String sqlUtimaPersona = "SELECT * FROM persona WHERE id_persona ="
+					+ " (select max(id_persona) FROM persona)"; 
+				
+			conn = miConexion.conectar();
+				
+			Statement stm = conn.createStatement();
+			ResultSet res = stm.executeQuery(sqlUtimaPersona);
+			int idPersona = 0;
+				
+			while (res.next()) {
+				idPersona = res.getInt("ID_PERSONA");
+			}
+				
+			miConexion.desconectar(conn);
+			return idPersona;		
+		}
 }
