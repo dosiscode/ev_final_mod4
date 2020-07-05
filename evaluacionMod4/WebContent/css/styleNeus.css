@@ -1,0 +1,66 @@
+@charset "ISO-8859-1";
+
+.contenedorPpl{
+	border: solid;
+    width: 70%;
+    margin-left: 15%;
+    border-radius: .4em;
+    justify-content: center;
+}
+
+.cont_uno{
+	display: flex;
+	justify-content: center;
+	margin: 10px;
+}
+
+
+.inputs{
+	margin: 10px 0 0 10px;
+}
+
+input[type=radio] {
+ 
+ margin: 3px 10px 11px 23px;
+ 
+}
+
+.date{
+	margin: 0 25px;
+}
+
+.contTextArea {	
+    width: 80%;
+    margin: 0 10%;
+}
+
+textarea {
+	width: 90%;
+	max-width: 90%;	
+	margin-top: 10px;
+}
+.btns{
+	
+	width: 80%;
+	text-align: right;
+	margin: 5px 0 12px 0;
+}
+input {
+	margin: 10px ;
+}
+button{
+	border-radius: .2em;
+	color: white;
+}
+.aceptar{
+	background: #0000ff;	
+}
+.limpiar{
+	background: #99ff99;
+}
+.cancelar{
+	background: #ff0000;
+}
+h3{
+	margin-left: 3%;
+}
