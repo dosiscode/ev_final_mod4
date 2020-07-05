@@ -1,6 +1,7 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -21,6 +22,26 @@ public class PersonaDao {
 	
 	public PersonaDao(DataSource datos) {
 		this.miConexion = new Conexion(datos);
+	}
+	
+	
+	//Guarda una persona en la BD
+	public boolean guardaPersona(Persona p) throws SQLException {
+		 
+		String sql = "INSERT INTO PERSONA VALUES(IDPERSONA.nextval, ?,?,?)";
+		
+		conn = miConexion.conectar();
+		
+		PreparedStatement preStm = conn.prepareStatement(sql);
+		
+		preStm.setString(1, p.getNombre());
+		preStm.setString(2, p.getApellido());
+		preStm.setInt(3, p.getEdad());
+				
+		boolean siGuarda = preStm.executeUpdate() > 0;
+		miConexion.desconectar(conn);
+		
+		return siGuarda;		
 	}
 
 	

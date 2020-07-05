@@ -47,10 +47,8 @@ public class ClienteDAO {
 			listaCliente.add(cliente);
 		}
 		
-		miConexion.desconectar(conn);
-		
-		return listaCliente;
-		
+		miConexion.desconectar(conn);		
+		return listaCliente;		
 	}
 	
 }

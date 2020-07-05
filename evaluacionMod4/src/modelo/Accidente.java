@@ -15,6 +15,20 @@ public class Accidente {
 	private int id_asesoria;
 	
 	
+	
+	public Accidente(int id_accidente, Time hora, Date fecha, String descripcion, int id_gravedad, int id_persona,
+			int id_asesoria) {
+		super();
+		this.id_accidente = id_accidente;
+		this.hora = hora;
+		this.fecha = fecha;
+		this.descripcion = descripcion;
+		this.id_gravedad = id_gravedad;
+		this.id_persona = id_persona;
+		this.id_asesoria = id_asesoria;
+	}
+
+
 	public Accidente(int id_accidente, Time hora, Date fecha, String descripcion, int id_gravedad, int id_persona) {
 		super();
 		this.id_accidente = id_accidente;
@@ -94,8 +108,4 @@ public class Accidente {
 	public void setId_asesoria(int id_asesoria) {
 		this.id_asesoria = id_asesoria;
 	}
-	
-	
-	
-	
 }
