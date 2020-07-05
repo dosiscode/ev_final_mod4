@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+	<Resource name= "miConexion" auth="Container" type = "javax.sql.DataSource"
+	
+				maxActive="15" maxIdle ="3" maxWait="3000"
+				
+				username="SYSTEM" password="Javierneus1"
+				
+				driverClassName="oracle.jdbc.driver.OracleDriver"
+				
+				url="jdbc:oracle:thin:@localhost:1521:orcl">	
+	</Resource>
+</Context> 
