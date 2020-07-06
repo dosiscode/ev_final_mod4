@@ -1,0 +1,75 @@
+body {
+    padding: 10px;
+}
+
+.header {
+    width: 98%;
+    padding: 10px;
+    background-color: #085394;
+    color: white;
+}
+
+.dflexLeft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.dflexRight{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dflexSpace {
+    height: 470px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login {
+    padding: 40px;
+    border: 1px solid black;
+    -webkit-box-shadow: 7px 9px 8px 3px rgba(0,0,0,0.68);
+    -moz-box-shadow: 7px 9px 8px 3px rgba(0,0,0,0.68);
+    box-shadow: 7px 9px 8px 3px rgba(0,0,0,0.68);
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.btn-azul {
+    width: 60%;
+    padding: 5px;
+    background-color: #085394;
+    color: white;
+}
+
+.btn-azul:hover {
+    opacity: 0.9;
+}
+
+.btn-danger {
+    background-color: red;
+    color: white;
+}
+
+.btn-danger:hover {
+    opacity: 0.9;
+}
+
+.mt {
+    margin-top: 20px;
+}
+
+.btnSeleccionar {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 100px;
+    background-color: #085394;
+    color: white;
+}
+.btnSeleccionar:hover {
+    opacity: 0.9;
+}
