@@ -1,0 +1,72 @@
+body{
+	font-family:sans-serif;
+}
+
+.modal-contenido{
+  background-color:white;
+  width:480px;
+  padding: 10px 20px;
+  margin: 8% auto;
+  position: relative;
+  border-radius:3.5px;
+}
+.modal1, .modal2{
+  background-color: rgba(0,0,0,.8);
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  opacity:0;
+  pointer-events:none;
+  transition: all 1s;
+}
+#miModal1:target{
+  opacity:1;
+  pointer-events:auto;
+}
+#miModal2:target{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.clientes{
+	 width:360px;
+	 text-align: center;
+	 margin-left:188px;
+}
+
+.objetivo{
+	width:550px;
+	height:150px;
+}
+
+.fecha{
+	width:550px;
+}
+
+.tema{
+	width:550px;
+}
+
+.btn{
+    text-decoration: none;
+    padding: 8px;
+    color: black;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+    align-content:center;
+    margin:5px;
+    font-size:15px;
+  }
+  
+  .botones{
+  margin-left:400px;
+  padding-bottom: 10px;
+  }
+  
+  
+  .close{
+  background-color: white;
+  }

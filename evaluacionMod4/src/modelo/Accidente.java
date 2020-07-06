@@ -1,5 +1,6 @@
 package modelo;
 
+<<<<<<< HEAD
 import java.sql.Date;
 import java.sql.Time;
 
@@ -27,6 +28,24 @@ public class Accidente {
 	}
 
 
+=======
+import java.sql.Time;
+import java.util.Date;
+
+public class Accidente {
+
+	
+	private int id_accidente;
+	private Time hora;
+	private Date fecha;
+	private String descripcion;
+	private int id_gravedad;
+	private int id_persona;
+	private int id_asesoria;
+	
+	
+	
+>>>>>>> branch 'master' of https://github.com/dosiscode/ev_final_mod4.git
 	public Accidente(int id_accidente, Time hora, Date fecha, String descripcion, int id_gravedad, int id_persona,
 			int id_asesoria) {
 		super();
