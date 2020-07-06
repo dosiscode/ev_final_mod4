@@ -21,7 +21,7 @@ public class ProfesionalDAO implements ICRUD{
 	
 	@Override
 	public boolean guardar(Object o) throws SQLException {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 	@Override
