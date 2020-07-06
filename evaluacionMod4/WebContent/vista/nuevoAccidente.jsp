@@ -47,9 +47,9 @@
 					<textarea id="descripcion" name="descripcion" rows="5" cols="70"></textarea>				
 				</div>				
 				<div class="btns">
-					<button class="aceptar" type="submit">Aceptar</button>
-					<button class="limpiar">Limpiar</button>
-					<button class="cancelar">Cancelar</button>
+					<button class="aceptar">Aceptar</button>					
+					<a href="nuevoAccidente.jsp"><input type="button" value="Limpiar" class="limpiar"></a>
+					<a href="../index.jsp"><input type="button" value="Cancelar" class="cancelar" ></a>
 				</div>
 			</form>
 		

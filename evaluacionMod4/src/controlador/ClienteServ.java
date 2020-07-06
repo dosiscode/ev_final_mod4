@@ -12,6 +12,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -25,6 +27,7 @@ import dao.AccidenteDAO;
 import dao.ClienteDAO;
 import dao.PersonaDao;
 import modelo.Accidente;
+import modelo.Cliente;
 import modelo.Persona;
 
 
@@ -84,40 +87,43 @@ public class ClienteServ extends HttpServlet {
 			int edad = Integer.parseInt(request.getParameter("edad"));			
 			int nivel = Integer.parseInt(request.getParameter("nivel"));
 			String horaString = request.getParameter("hora");
-		//	String fechaString = request.getParameter("fecha");
 			Date fecha = Date.valueOf(request.getParameter("fecha"));
 			String descripcion = request.getParameter("descripcion");			 
 				
-			//se convierte la fecha y la hora
-			//LocalDate ld = LocalDate.parse(fechaString);
-			//Date fecha = Date.from(ld.atStartOfDay(ZoneId.systemDefault()).toInstant());			 
-			 
+			//se convierte la hora			
 			LocalTime lt = LocalTime.parse(horaString);
-			Time hora = Time.valueOf(lt);
-			 
+			Time hora = Time.valueOf(lt);			 
 			
 			//se crea una nueva persona y su accidente
 			Persona personaNueva = new Persona(nombre, apellido, edad);			
-			Accidente accidenteNuevo = new Accidente(hora, fecha, descripcion, nivel);
-			
-			
-			try {
-				personaDao.guardaPersona(personaNueva);
-			} catch (Exception e) {
-				
-			}
-			
-			
+			Accidente accidenteNuevo = new Accidente(hora, fecha, descripcion, nivel);			
 			
 			try {
 				//Se guarda la persona y el accidente.
-				
+				personaDao.guardaPersona(personaNueva);
 				accidenteDao.guardaAccidente(accidenteNuevo);
 				
+				request.getRequestDispatcher("/index.jsp").forward(request, response);
+				
 			} catch (SQLException e) {
-				System.out.println(e.getErrorCode());
-				System.out.println("aqui");
+				System.out.println(e.getErrorCode());				
 			}				
-		}  
+		}
+		
+		if (accion.equals("listarCliente")) {
+			
+			List<Cliente> listaCliente;
+			
+			try {
+				listaCliente = clienteDao.listarClientes();
+				
+				request.setAttribute("listaClientes", listaCliente);
+				
+				request.getRequestDispatcher("/vista/revisarCliente.jsp").forward(request, response);
+				
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}			
+		}
 	}	
 }

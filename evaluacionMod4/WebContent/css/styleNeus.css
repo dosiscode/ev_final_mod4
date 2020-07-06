@@ -64,3 +64,17 @@ button{
 h3{
 	margin-left: 3%;
 }
+
+td, th{
+    text-align: center;
+    border: solid 1px;
+    padding: 5px;
+}
+ 
+ th{
+    text-align: center;
+    border: solid 1px;
+    padding: 5px;
+    background: blue;
+    color: white;
+}
