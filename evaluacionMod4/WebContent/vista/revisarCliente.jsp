@@ -10,31 +10,31 @@
 		
 	</head>
 	<body>
-		<div>
-			<a href="vista/vistaProfesional.jsp"><input type="button" value="volver"></a>
-		<table>
-				<tr>
-					<th>Razón</th>
-					<th>RUT</td>
-					<th>Email</th>
-					<th>Región</th>
-					<th>Comuna</th>
-					<th>Dirección</th>
-					<th>Número</th>
-				</tr>
-				<c:forEach  var="cliente" items="${listaClientes}">		
-		
-			<tr>				
-				<td>${cliente.getNombre()}</td>
-				<td>${cliente.getRut()}</td>
-				<td>${cliente.getEmail()}</td>
-				<td>${cliente.getRegion()}</td>
-				<td>${cliente.getComuna()}</td>
-				<td>${cliente.getDireccion()}</td>
-				<td>${cliente.getNum_direccion()}</td>
-			</tr>		
-		</c:forEach>	
-			</table>
+		<div class="divRevisaCliente">
+				<a href="vista/vistaProfesional.jsp"><input class="cancelar btn_input" type="button" value="volver"></a>
+			<table>
+					<tr>
+						<th>Razón</th>
+						<th>RUT</td>
+						<th>Email</th>
+						<th>Región</th>
+						<th>Comuna</th>
+						<th>Dirección</th>
+						<th>Número</th>
+					</tr>
+					<c:forEach  var="cliente" items="${listaClientes}">		
+			
+				<tr>				
+					<td>${cliente.getNombre()}</td>
+					<td>${cliente.getRut()}</td>
+					<td>${cliente.getEmail()}</td>
+					<td>${cliente.getRegion()}</td>
+					<td>${cliente.getComuna()}</td>
+					<td>${cliente.getDireccion()}</td>
+					<td>${cliente.getNum_direccion()}</td>
+				</tr>		
+			</c:forEach>	
+				</table>
 		</div>
 	</body>
 </html>

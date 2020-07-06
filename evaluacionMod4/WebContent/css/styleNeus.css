@@ -45,6 +45,10 @@ textarea {
 	text-align: right;
 	margin: 5px 0 12px 0;
 }
+.btn_input{
+	border-radius: .2em;
+	color: white;
+}
 input {
 	margin: 10px ;
 }
@@ -77,4 +81,18 @@ td, th{
     padding: 5px;
     background: blue;
     color: white;
+ }
+ 
+.divProfesional{
+	text-align: center;
+    border: solid 1px;
+    width: 40%;
+    margin: 5% 0 0 30%;
+    height: 90px;
+    padding: 10px;
+}
+.divRevisaCliente{
+	display: flex;
+    justify-content: center;
+    margin-top: 10%;	
 }
