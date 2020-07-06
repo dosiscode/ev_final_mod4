@@ -21,8 +21,27 @@ public class ProfesionalDAO implements ICRUD{
 	
 	@Override
 	public boolean guardar(Object o) throws SQLException {
+		boolean r=false;
+		String sql ="insert into PROFESIONAL(ID_PROFESIONAL,RUT,NOMBRE,APELLIDO) values (?,?,?,?)";
 		
-		return false;
+		try {
+			Profesional p=new Profesional();
+			conn=miConexion.conectar();
+			ps=conn.prepareStatement(sql);
+			ps.setString(1, p.getId_profesional());
+			ps.setString(2, p.getRut());
+			ps.setString(3, p.getNombre());
+			ps.setString(4, p.getApellido());
+			r=ps.executeUpdate();
+			if (r==1) {
+				r=true;
+			}else {
+				r=false;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return r;
 	}
 	@Override
 	public List<Object> listarTodo() throws SQLException {
@@ -35,7 +54,7 @@ public class ProfesionalDAO implements ICRUD{
 			rs=ps.executeQuery();
 			while (rs.next()) {
 				Profesional p=new Profesional();
-				p.setId_profesional(rs.getString(1));
+				p.setId_profesional(rs.getInt(1));
 				p.setRut(rs.getString(2));
 				p.setNombre(rs.getString(3));
 				p.setApellido(rs.getString(4));
