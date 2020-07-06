@@ -1,28 +1,9 @@
 package dao;
 
-<<<<<<< HEAD
+
 import java.util.List;
 
-public class AsesoriaDAO implements ICR {
-	private String hola;
-	
-	@Override
-	public boolean guardar(Object o) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public List<Object> listarTodo() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object buscarPorID(int id) {
-		// TODO Auto-generated method stub
-		return null;
-=======
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
@@ -104,7 +85,7 @@ public class AsesoriaDAO implements ICR {
 		miConexion.desconectar(con);
 		
 		return asesoria;
->>>>>>> branch 'master' of https://github.com/dosiscode/ev_final_mod4.git
+
 	}
 
 }

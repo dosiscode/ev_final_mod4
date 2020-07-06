@@ -39,9 +39,9 @@ public class CapacitacionDAO implements ICR {
 	}
 
 	@Override
-	public List<Object> listarTodo() throws SQLException{
-		(List<Capacitacion>)(Object)listaCapacitacion = new ArrayList<Capacitacion>(); 
+	public List<Capacitacion> listarTodo() throws SQLException{
 		
+		 List<Capacitacion> listaCapacitacion = new ArrayList<Capacitacion>();
 		String sql = "SELECT * FROM Capacitacion";
 		
 		con = miConexion.conectar();
