@@ -16,7 +16,7 @@ public class Cliente {
 	
 	//Constuctor para listar consulta de BD
 	public Cliente(String nombre, String rut, String email, String direccion, String region, String comuna,
-			int num_direccion) {
+			int num_direccion, int id_cliente) {
 		super();
 		this.nombre = nombre;
 		this.rut = rut;
@@ -25,6 +25,7 @@ public class Cliente {
 		this.region = region;
 		this.comuna = comuna;
 		this.num_direccion = num_direccion;
+		this.id_cliente = id_cliente;
 	}
 
 
@@ -41,6 +42,8 @@ public class Cliente {
 	}
 
 	
+
+
 	public String getRegion() {
 		return region;
 	}

@@ -31,6 +31,7 @@
 						<th>Comuna</th>
 						<th>Dirección</th>
 						<th>Número</th>
+						<th>Cantidad de Accidentes</th>
 					</tr>
 					<c:forEach  var="cliente" items="${listaClientes}">		
 			
@@ -42,6 +43,12 @@
 					<td>${cliente.getComuna()}</td>
 					<td>${cliente.getDireccion()}</td>
 					<td>${cliente.getNum_direccion()}</td>
+					<td>
+						<form action="ClienteServ?accion=enviarCliente" method="post">
+							<input type="text" name="idCliente" value="${cliente.getId_cliente()}" hidden="false">
+							<input class="aceptar btn_input" type="submit" value="Revisar">
+						</form>
+					</td>
 				</tr>		
 			</c:forEach>	
 				</table>

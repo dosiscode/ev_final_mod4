@@ -31,10 +31,10 @@ public class ClienteDAO {
 			
 		List<Cliente> listaCliente = new ArrayList<Cliente>();
 		
-		String sql = "SELECT nombre, rut, correo_electronico, region, comuna, "
-				+ "direccion, numero_direccion FROM cliente "
-				+ "INNER JOIN comuna on cliente.comuna_id_comuna = comuna.id_comuna\r\n" + 
-				"INNER JOIN region on comuna.region_id_region = region.id_region";
+		String sql = "SELECT id_cliente, nombre, rut, correo_electronico, region, comuna, "
+				+ "direccion, numero_direccion FROM cliente \r\n" + 
+				"INNER JOIN comuna on cliente.comuna_id_comuna = comuna.id_comuna\r\n" + 
+				"INNER JOIN region on comuna.region_id_region = region.id_region ORDER BY id_cliente";
 		
 		conn = miConexion.conectar();
 		
@@ -43,10 +43,12 @@ public class ClienteDAO {
 		ResultSet res = stm.executeQuery(sql);
 		
 		while (res.next()) {
-			cliente = new Cliente( res.getString("nombre"), res.getString("rut") , 
-					res.getString("correo_electronico"), res.getString("direccion"),
-					res.getString("region"), res.getString("comuna"), res.getInt("numero_direccion"));
-			
+			cliente = new Cliente(res.getString("nombre"), res.getString("rut") , 
+					res.getString("correo_electronico"), res.getString("direccion"), 
+					res.getString("region"), res.getString("comuna"), res.getInt("numero_direccion"),
+					res.getInt("id_cliente"));
+					
+					
 			listaCliente.add(cliente);
 		}
 		

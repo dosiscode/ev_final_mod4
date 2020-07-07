@@ -127,5 +127,11 @@ public class ClienteServ extends HttpServlet {
 				System.out.println(e.getMessage());
 			}			
 		}
+		
+		if(accion.equals("enviarCliente")) {
+			int idClienteSlect = Integer.parseInt(request.getParameter("idCliente"));
+			
+			System.out.println(idClienteSlect);
+		}
 	}	
 }

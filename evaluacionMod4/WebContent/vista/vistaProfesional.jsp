@@ -28,8 +28,7 @@
 				<form action="../ClienteServ?accion=listarCliente" method="post">
 					<input class="aceptar btn_input" type="submit" value="Asesorías">
 				</form>
-			</div>
-			
+			</div>			
 			<div>
 				<img alt="" src="../img/seguridad.jpg">
 			</div>
