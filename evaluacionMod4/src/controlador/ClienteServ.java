@@ -79,9 +79,13 @@ public class ClienteServ extends HttpServlet {
 		Date fecha;
 		String descripcion;
 		
+		if(accion.equals("entraCliente")) {
+			request.getRequestDispatcher("/vista/nuevoAccidente.jsp").forward(request, response);			
+		}
 		
 		if (accion.equals("creaAccidente")) {			
 			
+			int siCrea = 0; 
 			//Se obtienen los datos del formulario
 			 nombre = request.getParameter("nombre");
 			 apellido = request.getParameter("apellido");
@@ -103,12 +107,18 @@ public class ClienteServ extends HttpServlet {
 			try {
 				//Se guarda la persona y el accidente.
 				personaDao.guardaPersona(personaNueva);
-				boolean siGuarda = accidenteDao.guardaAccidente(accidenteNuevo);
+				accidenteDao.guardaAccidente(accidenteNuevo);
 				
-				request.getRequestDispatcher("/index.jsp").forward(request, response);
+				siCrea = 1;				
+				request.setAttribute("confirmacion", siCrea);
+				request.getRequestDispatcher("/vista/nuevoAccidente.jsp").forward(request, response);
 				
 			} catch (SQLException e) {
-				System.out.println(e.getErrorCode());				
+				System.out.println(e.getMessage());
+				
+				siCrea = 0;				
+				request.setAttribute("confirmacion", siCrea);
+				request.getRequestDispatcher("/vista/nuevoAccidente.jsp").forward(request, response);				
 			}				
 		}
 		

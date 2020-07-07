@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Registrar Accidente (Cliente)</title>
-		<link rel="stylesheet" href="../css/styleNeus.css">
-		 <link rel="stylesheet" href="../css/panel.css">
+		<link rel="stylesheet" href="./css/styleNeus.css">
+		 <link rel="stylesheet" href="./css/panel.css">
 		
 	</head>
-	<body>
+	<c:set value="${confirmacion}" var="confir"></c:set>
+	<body onload="muestraConfirma(${confir})">
 		<div class="header">
 	        <div class="dflexLeft">
-	            <img class="icono" src="../img/img_header.png" alt="Brand">
+	            <img class="icono" src="./img/img_header.png" alt="Brand">
 	        </div>
 	        <div class="dflexRight">
 	            <button class="btn-danger">Salir</button>
@@ -20,7 +22,7 @@
 	    </div>
 		<div class="contenedorPpl">
 		<h3>Nuevo Accidente</h3>
-			<form action="../ClienteServ?accion=creaAccidente" method="post">
+			<form action="./ClienteServ?accion=creaAccidente" method="post">
 				<div class="cont_uno">					
 					<div class="inputs">
 						<label for="nombre">Nombre: </label><br>
@@ -32,7 +34,7 @@
 					</div>
 					<div class="inputs">
 						<label for="edad">Edad: </label><br>
-						<input type="number" id="edad" name="edad" required>
+						<input type="number" id="edad" name="edad" required max="200">
 					</div>					
 				</div>
 				<div class="cont_uno">
@@ -57,14 +59,14 @@
 					<textarea id="descripcion" name="descripcion" rows="5" cols="70" required></textarea>				
 				</div>				
 				<div class="btns">
-					<button onclick="alerta()" class="aceptar">Aceptar</button>					
-					<a onclick="limpiar()"><input type="button" value="Limpiar" class="limpiar"></a>
-					<a href="../index.jsp"><input type="button" value="Cancelar" class="cancelar" ></a>
+					<button  class="aceptar">Aceptar</button>	
+					<a onclick="limpiar()"><input type="button" value="Limpiar" class="limpiar"></a>				
 				</div>
 			</form>		
 		</div>	
-	<script type="text/javascript" src="../js/validaAccidente.js"></script>
+	<script type="text/javascript" src="./js/validaAccidente.js"></script>
 	</body>
+	
 	 <div class="header txt-center">
         <h5>Copyright 2020</h5>
     </div>

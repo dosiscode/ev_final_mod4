@@ -9,10 +9,20 @@
 	
 		nombre.value = "";
 		apellido.value = "";
-		edad.value.trim = "";
+		edad.value = null;
 		descripcion.value = "";
 		fecha.value = "";
 		hora.value = "";
+		
 	
+	}
+	
+	function muestraConfirma(confirma){
+		
+		if(confirma == 1){
+			alert("Accidente agregado correctamente");
+		}else if(confirma == 2){
+			alert("Ocurrio un error inesperado");
+		}
 	}
 	
