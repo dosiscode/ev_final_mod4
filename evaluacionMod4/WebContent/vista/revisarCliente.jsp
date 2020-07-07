@@ -7,9 +7,19 @@
 		<meta charset="ISO-8859-1">
 		<title>Revisar Cliente</title>
 		<link rel="stylesheet" href="./css/styleNeus.css">
+		<link rel="stylesheet" href="./css/panel.css">
 		
 	</head>
 	<body>
+		<div class="header">
+	        <div class="dflexLeft">
+	            <img class="icono" src="./img/img_header.png" alt="Brand">
+	        </div>
+	        <div class="dflexRight">
+	            <button class="btn-danger">Salir</button>
+	        </div>
+	    </div>
+		<h1>Lista de clientes</h1>
 		<div class="divRevisaCliente">
 				<a href="vista/vistaProfesional.jsp"><input class="cancelar btn_input" type="button" value="volver"></a>
 			<table>
@@ -36,5 +46,8 @@
 			</c:forEach>	
 				</table>
 		</div>
+		 <div class="header txt-center">
+        <h5>Copyright 2020</h5>
+    </div>
 	</body>
 </html>

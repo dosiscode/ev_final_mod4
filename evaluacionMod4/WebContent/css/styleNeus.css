@@ -3,7 +3,7 @@
 .contenedorPpl{
 	border: solid;
     width: 70%;
-    margin-left: 15%;
+    margin: 5% 15%;
     border-radius: .4em;
     justify-content: center;
 }
@@ -68,7 +68,9 @@ button{
 h3{
 	margin-left: 3%;
 }
-
+h1{
+	text-align: center;
+}
 td, th{
     text-align: center;
     border: solid 1px;
@@ -87,12 +89,24 @@ td, th{
 	text-align: center;
     border: solid 1px;
     width: 40%;
-    margin: 5% 0 0 30%;
-    height: 90px;
-    padding: 10px;
+    margin: 10% 30%;
+    display: flex;
+    padding: 20px;
+    border-radius: 1em;
 }
 .divRevisaCliente{
 	display: flex;
     justify-content: center;
-    margin-top: 10%;	
+     margin: 5% 10%;
+    border: solid 1px;
+    width: 80%;
+    overflow: scroll;
+    
 }
+ img{
+ 	width: 100%;
+ 	border-radius:.5em; 
+ }
+ .icono{
+ 	width: 7%;
+ }

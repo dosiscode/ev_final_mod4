@@ -1,18 +1,12 @@
 package controlador;
 
-import java.io.IOException;
 
+
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
-
-
-import java.time.LocalDate;
-
 import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -53,7 +47,6 @@ public class ClienteServ extends HttpServlet {
 		accidenteDao = new AccidenteDAO(datosConexion);
 	}
 	
-	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -78,17 +71,26 @@ public class ClienteServ extends HttpServlet {
 		
 		String accion = request.getParameter("accion");	
 		
+		String nombre;  
+		String apellido; 
+		int edad; 
+		int nivel; 
+		String horaString; 
+		Date fecha;
+		String descripcion;
+		
 		
 		if (accion.equals("creaAccidente")) {			
 			
 			//Se obtienen los datos del formulario
-			String nombre = request.getParameter("nombre");
-			String apellido = request.getParameter("apellido");
-			int edad = Integer.parseInt(request.getParameter("edad"));			
-			int nivel = Integer.parseInt(request.getParameter("nivel"));
-			String horaString = request.getParameter("hora");
-			Date fecha = Date.valueOf(request.getParameter("fecha"));
-			String descripcion = request.getParameter("descripcion");			 
+			 nombre = request.getParameter("nombre");
+			 apellido = request.getParameter("apellido");
+			 edad = Integer.parseInt(request.getParameter("edad"));			
+			 nivel = Integer.parseInt(request.getParameter("nivel"));
+			 horaString = request.getParameter("hora");
+			 fecha = Date.valueOf(request.getParameter("fecha"));
+			 descripcion = request.getParameter("descripcion");			 
+			 
 				
 			//se convierte la hora			
 			LocalTime lt = LocalTime.parse(horaString);
@@ -101,7 +103,7 @@ public class ClienteServ extends HttpServlet {
 			try {
 				//Se guarda la persona y el accidente.
 				personaDao.guardaPersona(personaNueva);
-				accidenteDao.guardaAccidente(accidenteNuevo);
+				boolean siGuarda = accidenteDao.guardaAccidente(accidenteNuevo);
 				
 				request.getRequestDispatcher("/index.jsp").forward(request, response);
 				
