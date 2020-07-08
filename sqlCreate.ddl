@@ -192,7 +192,9 @@ ALTER TABLE visita
         REFERENCES capacitacion ( id_capacitacion );
 
 
+CREATE SEQUENCE idvisita_sequence MINVALUE 1 START WITH 1 INCREMENT BY 1;
 
+CREATE SEQUENCE idcliente_sequence MINVALUE 1 START WITH 1 INCREMENT BY 1;
 
 CREATE SEQUENCE idPersona INCREMENT BY 1 START WITH 1; 
 
