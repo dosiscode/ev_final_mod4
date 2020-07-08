@@ -11,6 +11,7 @@
 	<form action="../ClienteServ?accion=entraCliente" method="post">
 		<input type="submit" value="Cliente">
 	</form>
+	
 
 </body>
 </html>

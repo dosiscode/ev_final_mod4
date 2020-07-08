@@ -11,7 +11,7 @@
 		
 	</head>
 	<c:set value="${confirmacion}" var="confir"></c:set>
-	<body onload="muestraConfirma(${confir})">
+	<body onload="muestraConfirma(${confir}, 'accidente')">
 		<div class="header">
 	        <div class="dflexLeft">
 	            <img class="icono" src="./img/img_header.png" alt="Brand">
@@ -60,11 +60,11 @@
 				</div>				
 				<div class="btns">
 					<button  class="aceptar">Aceptar</button>	
-					<a onclick="limpiar()"><input type="button" value="Limpiar" class="limpiar"></a>				
+					<a onclick="limpiar('accidente')"><input type="button" value="Limpiar" class="limpiar"></a>				
 				</div>
 			</form>		
 		</div>	
-	<script type="text/javascript" src="./js/validaAccidente.js"></script>
+	<script type="text/javascript" src="./js/validaForm.js"></script>
 	</body>
 	
 	 <div class="header txt-center">

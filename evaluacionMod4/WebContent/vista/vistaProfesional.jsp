@@ -22,7 +22,7 @@
 				<form action="../ClienteServ?accion=listarCliente" method="post">
 					<input class="aceptar btn_input" type="submit" value="Revisar Cliente">
 				</form>
-				<form action="../ClienteServ?accion=listarCliente" method="post">
+				<form action="../ProfServ?accion=creaCapacita" method="post">
 					<input class="aceptar btn_input" type="submit" value="Capacitaciones">
 				</form>
 				<form action="../ClienteServ?accion=listarCliente" method="post">

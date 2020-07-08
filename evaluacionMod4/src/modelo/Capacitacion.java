@@ -8,7 +8,22 @@ public class Capacitacion {
 	private String descripcion;
 	private String objetivo;
 	private Date fecha_solicitud;
+	private int id_cliente;
+	private int id_visita;
 	
+	
+	
+	
+	
+		
+	//para agregar a BD
+	public Capacitacion(String descripcion, String objetivo, int id_cliente) {
+		super();
+		this.descripcion = descripcion;
+		this.objetivo = objetivo;
+		this.id_cliente = id_cliente;
+	}
+
 	public Capacitacion(int id_capacitacion, String descripcion, String objetivo, Date fecha_solicitud) {
 		super();
 		this.id_capacitacion = id_capacitacion;
@@ -48,6 +63,23 @@ public class Capacitacion {
 	public void setFecha_solicitud(Date fecha_solicitud) {
 		this.fecha_solicitud = fecha_solicitud;
 	}
+
+	public int getId_cliente() {
+		return id_cliente;
+	}
+
+	public void setId_cliente(int id_cliente) {
+		this.id_cliente = id_cliente;
+	}
+
+	public int getId_visita() {
+		return id_visita;
+	}
+
+	public void setId_visita(int id_visita) {
+		this.id_visita = id_visita;
+	}
+	
 	
 	
 }

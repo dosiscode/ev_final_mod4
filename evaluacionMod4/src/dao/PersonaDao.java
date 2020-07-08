@@ -11,7 +11,6 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import conexion.Conexion;
-import modelo.Cliente;
 import modelo.Persona;
 
 public class PersonaDao {
