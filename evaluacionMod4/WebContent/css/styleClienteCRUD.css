@@ -1,16 +1,67 @@
-table {
+.tablaListar {
   border-collapse: collapse;
   width: 100%;
 }
 
-th, td {
+.tablaListar th, .tablaListar td {
   text-align: left;
   padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+.tablaListar tr:nth-child(even){background-color: #f2f2f2}
 
-th {
-  background-color: #4CAF50;
+.tablaListar th {
+  background-color: #0a61af;
   color: white;
 }
+
+.formulario{
+	margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    border: #808080 5px;
+    border-style: solid;
+    padding: 20px;
+    margin-top: 20px;
+}
+.formulario td{
+	padding: 5px;
+}
+
+.header {
+    width: 98%;
+    padding: 10px;
+    background-color: #085394;
+    color: white;
+}  
+
+.dflexLeft{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.dflexRight{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btnAgregar{
+	margin: 7px;
+	
+	
+}
+
+.btnAgregar input[type=button]{
+	background-color: #0dd530;
+	border-radius: 10px;
+	border: none;
+	padding: 10px
+}
+
+.txt-center {
+    text-align: center;
+}
+
+
+

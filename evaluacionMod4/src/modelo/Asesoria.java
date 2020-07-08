@@ -9,14 +9,21 @@ public class Asesoria {
 	private String objetivo;
 	private Date fecha_solicitud;
 	
-	public Asesoria(int id_asesoria, String tema, String objetivo, Date fecha_solicitud) {
+	public Asesoria(String tema, String objetivo, Date fecha_solicitud) {
+		super();
+		this.tema = tema;
+		this.objetivo = objetivo;
+		this.fecha_solicitud = fecha_solicitud;
+	}
+
+	public Asesoria(int id_asesoria,String tema, String objetivo, Date fecha_solicitud) {
 		super();
 		this.id_asesoria = id_asesoria;
 		this.tema = tema;
 		this.objetivo = objetivo;
 		this.fecha_solicitud = fecha_solicitud;
 	}
-
+	
 	public int getId_asesoria() {
 		return id_asesoria;
 	}

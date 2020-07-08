@@ -94,7 +94,16 @@ public class ProfServ extends HttpServlet {
 				capaDao.guardaCapacitacion(nuevaCapacitacion);
 				siCrea = 1;				
 				request.setAttribute("confirmacion", siCrea);				
-				mustraListaCliente(request, response);
+				
+				int ultimaCap= capaDao.idUltimaCapacitacion();
+				
+				request.setAttribute("idCap", ultimaCap);
+					
+				request.getRequestDispatcher("/vista/agregarVisita.jsp").forward(request, response);
+					
+					
+				
+				
 				
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());

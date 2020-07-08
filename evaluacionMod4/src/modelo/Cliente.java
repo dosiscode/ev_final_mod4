@@ -11,8 +11,32 @@ public class Cliente {
 	private String comuna;
 	private int comuna_id_comuna;
 	private int num_direccion;
+		
+	private Comuna com;
 	
 	
+	public Cliente(int id, String nombre, String rut, String email, String direccion, int num_direccion, Comuna com) {
+			super();
+			this.id_cliente=id;
+			this.nombre = nombre;
+			this.rut = rut;
+			this.email = email;
+			this.direccion = direccion;
+			this.com= com;
+			this.num_direccion = num_direccion;
+		}
+	
+	
+		public Cliente(String nombre, String rut, String email, String direccion, int num_direccion, Comuna com) {
+			super();
+			this.nombre = nombre;
+			this.rut = rut;
+			this.email = email;
+			this.direccion = direccion;
+			this.com= com;
+			this.num_direccion = num_direccion;
+		}
+
 	
 	//Constuctor para listar consulta de BD
 	public Cliente(String nombre, String rut, String email, String direccion, String region, String comuna,
@@ -42,7 +66,10 @@ public class Cliente {
 	}
 
 	
-
+	
+	public Comuna getCom() {
+		return com;
+	}
 
 	public String getRegion() {
 		return region;

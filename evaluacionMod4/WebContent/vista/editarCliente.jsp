@@ -19,29 +19,29 @@
         </div>
 	</div>
 	<div class="formulario">
-	<form action="../AdminServlet?accion=agregarCliente" method="post">
+	<form action="./AdminServlet?accion=editarCliente&id=${cliente.getId_cliente()}" method="post">
 		<table>
 			<tr>
 				<td colspan="2">Razon Social</td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="text"  id="txtRazonSocial" name="txtRazonSocial"></td>
+				<td colspan="2"><input type="text"  id="txtRazonSocial" name="txtRazonSocial" value="${cliente.getNombre()} "></td>
 			</tr>
 			<tr>
 				<td>RUT</td>
 				<td>Correo Electronico</td>
 			</tr>
 			<tr>
-				<td><input type="text"  id="txtRut" name="txtRut"></td>
-				<td><input type="text"  id="txtCorreo" name="txtCorreo"></td>
+				<td><input type="text"  id="txtRut" name="txtRut" value="${cliente.getRut()}"></td>
+				<td><input type="text"  id="txtCorreo" name="txtCorreo" value="${cliente.getEmail()}"></td>
 			</tr>
 			<tr>
 				<td>Direccion/Calle</td>
 				<td>Numero</td>
 			</tr>
 			<tr>
-				<td><input type="text"  id="txtCalle" name="txtCalle"></td>
-				<td><input type="text"  id="txtNum" name="txtNum"></td>
+				<td><input type="text"  id="txtCalle" name="txtCalle" value="${cliente.getDireccion()}"></td>
+				<td><input type="text"  id="txtNum" name="txtNum" value="${cliente.getNum_direccion()}"></td>
 			</tr>
 			<tr>
 				<td>Comuna</td>
@@ -69,7 +69,7 @@
 		%>
 		</br>
 		<a href="./AdminServlet?accion=listarClientes"><input type="button" value="Volver"></a>
-		<input type="submit" value="Guardar Cliente"> 
+		<input type="submit" value="Editar"> 
 	</form>
 		
 	</div>

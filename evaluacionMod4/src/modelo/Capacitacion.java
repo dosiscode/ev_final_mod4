@@ -13,7 +13,10 @@ public class Capacitacion {
 	
 	
 	
-	
+	public Capacitacion(int id_capacitacion) {
+		super();
+		this.id_capacitacion = id_capacitacion;
+	}
 	
 		
 	//para agregar a BD

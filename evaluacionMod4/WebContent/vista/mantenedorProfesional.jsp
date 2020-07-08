@@ -13,7 +13,9 @@
 	</div>
 
 	<div>
-		
+		<a href="./vista/seleccionaMantenedor.jsp"><input type="button" name="accion" value="Volver"></a>
+		<a href="./vista/agregarProfesional.jsp"><input type="button" value="Nuevo"></a>
+
 		<table border="1">
 			<thead>
 				<tr>
@@ -21,19 +23,28 @@
 					<th>RUT</th>
 					<th>NOMBRE</th>
 					<th>APELLIDO</th>
+					<th>ACCIONES</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="dato" items="$(datos)">
+			
+				<c:forEach var="dato" items="${datos}">
 				<tr>
-					<th><c:out value="$(dato.getId_profesional())"></c:out></th>
-					<th><c:out value="$(dato.getRut())"></c:out></th>
-					<th><c:out value="$(dato.getNombre())"></c:out></th>
-					<th><c:out value="$(dato.getApellido())"></c:out></th>
+					<th>${dato.getId_profesional()}</th>
+					<th>${dato.getRut()}</th>
+					<th>${dato.getNombre()}</th>
+					<th>${dato.getApellido()}</th>
+					<th>
+					<input type="hidden" name="txtId" value="${dato.getId_profesional()}">
+					<a href="AdminServlet?acc=Editar"><input type="button" value="Editar"></a>
+					<a href="AdminServlet?acc=Eliminar&id=${dato.getId_profesional()}"><input type="button" value="Eliminar"></a>
+					</th>
 				</tr>
-				</c:forEach>
+				</c:forEach>			
+			
 			</tbody>
 		</table>
+
 	</div>
 
 </body>

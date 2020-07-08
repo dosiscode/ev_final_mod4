@@ -2,7 +2,11 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -41,5 +45,24 @@ public class capacitaDao {
 			
 			return siGuarda;		
 		}
-
+		
+		//devuelve la id de la ultima capacitacion
+		public int idUltimaCapacitacion() throws SQLException {
+			
+			String sqlUtimaPersona = "SELECT * FROM capacitacion "
+					+ "WHERE id_capacitacion = (select max(id_capacitacion) FROM capacitacion)"; 
+				
+			conn = miConexion.conectar();
+				
+			Statement stm = conn.createStatement();
+			ResultSet res = stm.executeQuery(sqlUtimaPersona);
+			int idPersona = 0;
+				
+			while (res.next()) {
+				idPersona = res.getInt("id_capacitacion");
+			}
+				
+			miConexion.desconectar(conn);
+			return idPersona;		
+		}
 }

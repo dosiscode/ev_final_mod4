@@ -4,14 +4,14 @@ public class Usuario {
 	private int id_usuario;
 	private String usuario;
 	private String contrasenia;
-	private int id_rol;
+	private int rol_id_rol;
 	
-	public Usuario(int id_usuario, String usuario, String contrasenia, int id_rol) {
+	public Usuario(int id_usuario, String usuario, String contrasenia, int rol_id_rol) {
 		super();
 		this.id_usuario = id_usuario;
 		this.usuario = usuario;
 		this.contrasenia = contrasenia;
-		this.id_rol = id_rol;
+		this.rol_id_rol = rol_id_rol;
 	}
 
 	public int getId_usuario() {
@@ -39,11 +39,11 @@ public class Usuario {
 	}
 
 	public int getId_rol() {
-		return id_rol;
+		return rol_id_rol;
 	}
 
-	public void setId_rol(int id_rol) {
-		this.id_rol = id_rol;
+	public void setId_rol(int rol_id_rol) {
+		this.rol_id_rol = rol_id_rol;
 	}
 	
 
